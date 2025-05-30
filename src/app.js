@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const config = require('./config/config');
 const { enableCORS, setSecurityHeaders } = require('./middlewares/security.middleware');
 require('./store/sequelize');
 
@@ -20,10 +19,6 @@ app.use((err, req, res, next) => {
     message: err.message || 'Terjadi kesalahan pada server',
     ...(process.env.NODE_ENV !== 'production' && { stack: err.stack }),
   });
-});
-
-app.listen(config.server.port, () => {
-    console.log(`Server is running on http://localhost:${config.server.port}`);
 });
 
 module.exports = app;
