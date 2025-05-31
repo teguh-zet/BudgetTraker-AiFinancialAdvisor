@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "mamank546",
+    "password": "",
     "database": "budget_tracker_test",
     "host": "127.0.0.1",
     "port": 3306,
@@ -17,7 +17,7 @@
   },
   "production": {
     "username": "root",
-    "password": "mamank546",
+    "password": "",
     "database": "budget_tracker_prod",
     "host": "127.0.0.1",
     "port": 3306,
