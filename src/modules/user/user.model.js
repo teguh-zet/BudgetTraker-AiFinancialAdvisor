@@ -1,54 +1,49 @@
-const { uuid, email } = require("zod/v4");
-
-module.exports =(sequelize,DataTypes)=>{
-    const User = sequelize.define("User", {
-        id:{
+module.exports = (sequelize, DataTypes) => {
+    const User = sequelize.define('User', {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        uuid:{
+        uuid: {
             type: DataTypes.UUID,
+            allowNull: false,
             defaultValue: DataTypes.UUIDV4,
+            unique: true
+        },
+        name: {
+            type: DataTypes.STRING(50),
+            allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING(50),
             allowNull: false,
             unique: true
         },
-        name:{
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        email:{
-            type : DataTypes.STRING(50),
-            allowNull: false,
-            unique: true,
-        },
-        number:{
+        number: {
             type: DataTypes.STRING(50),
             allowNull: true,
-           
         },
-        password:{
-            type: DataTypes.STRING(225),
+        password: {
+            type: DataTypes.STRING(255),
+            allowNull: false
+        },
+        created_at: {
             allowNull: false,
-        },
-        createdAt: {
             type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
+            defaultValue: DataTypes.NOW,
         },
-        updatedAt: {
-            type: DataTypes.DATE,
+        updated_at: {
             allowNull: false,
-            defaultValue: DataTypes.NOW
-        }
-
-    },{
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+        },
+    }, {
         sequelize,
-        tableName : 'users',
         modelName: 'User',
-        timestamps: false,
+        tableName: 'users',
+        timestamp: false,
         underscored: true
-
     });
 
     User.associate = (models) => {
@@ -61,11 +56,6 @@ module.exports =(sequelize,DataTypes)=>{
             as: 'summary_user'
         })
     }
-
-
-   
-
+    
     return User;
-
-
 }

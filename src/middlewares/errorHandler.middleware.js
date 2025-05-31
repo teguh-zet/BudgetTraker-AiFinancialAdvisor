@@ -1,31 +1,30 @@
-const { success } = require('zod/v4');
 const HttpError = require('../errors/HttpError');
 
-function errorHandler(err, req, res, next) {
-    
-    if(err instanceof HttpError){
-        res.status(err.statusCode).json({
+function errorHandler(error, req, res, next) {
+    if(error instanceof HttpError){
+        res.status(error.statusCode).json({
             success: false,
-            message: err.message,
+            message: error.message
         })
         return;
     }
 
-    if(process.env.NODE_ENV === 'production') {
-        if(err instanceof Error){
+    if(process.env.NODE_ENV === "development") {
+        if(error instanceof Error) {
             res.status(500).json({
                 success: false,
-                message: err.message
-            });
-            return;
+                message: error.message
+            })
+            return
         }
-        
     }
-    console.error(err);
+
+    console.error(error)
 
     return res.status(500).json({
-        status: 'error',
-        msessage: 'Internal Server Error',
+        status: false,
+        message: "Server Error"
     })
 }
+
 module.exports = errorHandler;
