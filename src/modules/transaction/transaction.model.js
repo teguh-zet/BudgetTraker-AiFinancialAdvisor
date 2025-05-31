@@ -1,63 +1,54 @@
-module.exports =(sequelize, DataTypes) => {
-    const Transaction = sequelize.define("Transaction", {
+module.exports = (sequelize, DataTypes) => {
+    const Transaction = sequelize.define('Transaction', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        type:{
+        type: {
             type: DataTypes.ENUM('income', 'expense'),
             allowNull: false
         },
-        amount:{
-            type:DataTypes.STRING(20),
+        amount: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        date:{
+        date: {
             type: DataTypes.DATE,
-            allowNull: false
+            allowNull: false,
         },
-        note:{
+        note: {
             type: DataTypes.TEXT,
             allowNull: true
         },
-        user_id:{
-            type:DataTypes.INTEGER,
-            allowNull: false,   
-        },
-        category_id:{
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false
-            
         },
-        createdAt: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
+        category_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
-        updatedAt: {
-            type: DataTypes.DATE,
+        created_at: {
             allowNull: false,
-            defaultValue: DataTypes.NOW
-        }
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+        },
+        updated_at: {
+            allowNull: false,
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+        },
     }, {
-        
-        tableName : 'transactions',
-        timestamps: true,
+        tableName: 'transactions',
+        timestamp: true,
         underscored: true
     });
-
+    
     Transaction.associate = (models) => {
-        Transaction.belongsTo(models.User, {
-            foreignKey: 'user_id',
-            as: 'user'
-        });
-        
-        Transaction.belongsTo(models.Category, {
-            foreignKey: 'category_id',
-            as: 'category'
-        });
+        Transaction.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+        Transaction.belongsTo(models.Category, { foreignKey: 'category_id', as: 'category'});
     };
-
-    return Transaction;
+    
+    return Transaction
 }
