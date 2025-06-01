@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///D:/budget%20tracker%20course/check/frontend/src/utils/formatRupiah.ts"],"sourcesContent":["export default function formatRupiah(harga : number) {\r\n   return `rp. ${harga.toLocaleString(\"id-ID\", {\r\n       style: \"currency\",\r\n         currency: \"IDR\",\r\n            minimumFractionDigits: 0,\r\n            maximumFractionDigits: 0\r\n    })}`;\r\n\r\n}"],"names":[],"mappings":";;;AAAe,SAAS,aAAa,KAAc;IAChD,OAAO,CAAC,IAAI,EAAE,MAAM,cAAc,CAAC,SAAS;QACxC,OAAO;QACL,UAAU;QACP,uBAAuB;QACvB,uBAAuB;IAC/B,IAAI;AAER","debugId":null}}]
+}

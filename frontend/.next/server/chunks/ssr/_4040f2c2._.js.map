@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 33, "column": 0}, "map": {"version":3,"sources":["file:///D:/budget%20tracker%20course/check/frontend/src/app/page.tsx"],"sourcesContent":["import AuthPage from '@/components/AuthPage';\r\n\r\nexport default function Home() {\r\n  return <AuthPage />;\r\n}"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS;IACtB,qBAAO,8OAAC,8HAAA,CAAA,UAAQ;;;;;AAClB","debugId":null}}]
+}
