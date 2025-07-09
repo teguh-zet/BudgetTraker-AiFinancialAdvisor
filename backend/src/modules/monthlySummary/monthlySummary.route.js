@@ -13,6 +13,10 @@ router.get('/',
     asyncErrorHandler(MonthlySummaryController.getAll.bind(MonthlySummaryController))
 )
 
+router.post('/generate',
+    asyncErrorHandler(MonthlySummaryController.generate.bind(MonthlySummaryController))
+)
+
 router.get('/:id',
     idParamValidator,
     validateRequest,

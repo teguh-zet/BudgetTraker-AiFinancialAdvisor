@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Budget Tracker Deacourse",
+  title: "Budget Tracker Teazet",
   description: "Budget Tracker",
 };
 

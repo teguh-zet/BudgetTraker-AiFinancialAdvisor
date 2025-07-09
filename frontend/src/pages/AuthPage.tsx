@@ -45,7 +45,7 @@ const AuthPage = () => {
                     setErrors({ terms: "Kamu Harus Mensetujui Terms & Privacy "});
                     return
                 }
-                
+
                 response = await register({
                     ...formData,
                     number: `+62${formData.number}`
@@ -55,8 +55,7 @@ const AuthPage = () => {
             
             const token = response.data.token;
             localStorage.setItem("token", token);
-            console.log({response, token})
-            // router.push("/dashboard")
+            router.push("/dashboard");
         } catch (error) {
             if(error instanceof Error) {
                 setErrors({ general: error.message})

@@ -46,7 +46,7 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$p
 ;
 ;
 const metadata = {
-    title: "Budget Tracker Deacourse",
+    title: "Budget Tracker Teazet",
     description: "Budget Tracker"
 };
 function RootLayout({ children }) {
