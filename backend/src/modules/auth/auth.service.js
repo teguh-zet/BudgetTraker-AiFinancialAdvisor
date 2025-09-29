@@ -1,4 +1,5 @@
 const { User } = require('../../../models');
+
 const JwtService = require('./jwt.service');
 const bcrypt = require('bcrypt');
 const BadRequestError = require('../../errors/BadRequestError');
