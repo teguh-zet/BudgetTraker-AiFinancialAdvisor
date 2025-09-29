@@ -126,7 +126,7 @@ export default function SummaryPage() {
                     <p className="text-sm text-gray-500 mt-4">
                         Kamu bisa meminta ringkasan baru di esok hari.
                     </p>
-                    <p className="text-xs text-gray-400">Powered by TNG: DeepSeek R1T2 Chimera</p>
+                    <p className="text-xs text-gray-400">Powered by TNG: Grok 4 Fast</p>
                 </div>
             )}
 
