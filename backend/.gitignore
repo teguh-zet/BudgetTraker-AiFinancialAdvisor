@@ -1,6 +1,8 @@
 # Node modules
 node_modules/
 ca.pem
+# ignore file/sertifikat
+ca.pem
 # Logs
 logs/
 *.log
